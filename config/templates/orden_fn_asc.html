@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content%}
+    <div class="container">
+        <br>
+        <br>
+        <form action="" method="get">
+        <table class="table text-center">
+            <thead>
+            <tr>
+                <th>
+                    <button type="submit" class="btn btn-success btn-sm">Filtrar</button>
+                </th>
+                <th>
+                    <label for="nombre" class="form-label">Por Nombre:</label>
+                    <div class="input-group input-group-sm">
+                        <input value="{{f_firstname}}" type="text" name="firstname" id="nombre" class="form-control">
+                    </div>
+                </th>
+                <th>
+
+                </th>
+                <th>
+                
+                </th>
+                <th>
+                    <label for="" class="form-label">Por Fecha de modificación:</label>
+                    <div class="input-group input-group-sm">
+                        <input type="text" name="fecha_inicio" class="form-control">
+                        <input type="text" name="fecha_fin" class="form-control">
+                    </div>
+                </th>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Segundo Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Fecha de modificación</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for persona in personas%}
+            <tr>
+                <td>{{ persona.businessentityid }}</td>
+                <td>{{ persona.firstname }}</td>
+                <td>{{ persona.middlename }}</td>
+                <td>{{ persona.lastname }}</td>
+                <td>{{ persona.modifieddate }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </form>
+    </div>
+{% endblock %}
